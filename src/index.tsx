@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +12,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App groups={[
+      { title: 'Active', value: 1 },
+      { title: 'Inactive', value: 0 }
+    ]} items={[
+      { title: 'asknfa', value: 'a' },
+      { title: 'b', value: 'b' },
+      { title: 'c', value: 'c' },
+    ]} defaultValue={[['a','b'],['c']]} />
   </React.StrictMode>
 );
 
