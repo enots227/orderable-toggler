@@ -16,10 +16,16 @@ root.render(
       { title: 'Active', value: 1 },
       { title: 'Inactive', value: 0 }
     ]} items={[
-      { title: 'asknfa', value: 'a' },
+      { title: 'a', value: 'a' },
       { title: 'b', value: 'b' },
       { title: 'c', value: 'c' },
-    ]} defaultValue={[['a','b'],['c']]} />
+      { title: 'd', value: 'a' },
+      { title: 'e', value: 'e' },
+      { title: 'f', value: 'f' },
+      { title: 'g', value: 'g' },
+      { title: 'h', value: 'h' },
+      { title: 'i', value: 'i' },
+    ]} defaultValue={[['a','b','c','g','h'],['d','e','f','i']]} />
   </React.StrictMode>
 );
 
