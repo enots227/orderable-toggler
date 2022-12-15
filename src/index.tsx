@@ -25,7 +25,16 @@ root.render(
       { title: 'g', value: 'g' },
       { title: 'h', value: 'h' },
       { title: 'i', value: 'i' },
-    ]} defaultValue={[['a','b','c','g','h'],['d','e','f','i']]} />
+      { title: 'a2', value: 'a2' },
+      { title: 'b2', value: 'b2' },
+      { title: 'c2', value: 'c2' },
+      { title: 'd2', value: 'd2' },
+      { title: 'e2', value: 'e2' },
+      { title: 'f2', value: 'f2' },
+      { title: 'g2', value: 'g2' },
+      { title: 'h2', value: 'h2' },
+      { title: 'i2', value: 'i2' },
+    ]} defaultValue={[['a','b','c','g','h','a2','b2','c2','d2','e2','f2','g2','h2','i2'],['d','e','f','i']]} />
   </React.StrictMode>
 );
 
