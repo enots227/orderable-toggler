@@ -49,14 +49,16 @@ function OrderableToggler(props: OrderableTogglerProps) {
     const draggableRef = useRef<{ dG: number, dV: number } | null>(null)
     const isSearching = search.length > 0
 
-    const onMoveGroup = (value: string | number, curr: number, adj: number) => setValue(state => {
+    const onMoveGroup = (val: string | number, v: number, g: number, adj: number) => {
+        const res = [...value]
+        
         // remove from current group
-        state[curr].splice(state.findIndex(grp => grp.indexOf(value)), 1)
+        res[g].splice(v, 1)
         // add to new group
-        state[adj].push(value)
+        res[g + adj].splice(v, 0, val)
 
-        return state
-    })
+        setValue(res)
+    }
 
     const onDragStart = (g: number, v: number) => {
         setDragging(value[g][v] ?? null)
@@ -146,7 +148,7 @@ function OrderableToggler(props: OrderableTogglerProps) {
                                 onDragEnd={() => onDragEnd(g, v)}
                             >
                                 <InputGroup>
-                                    {g > 0 && <Button variant="orderable-toggler-toggler" onClick={() => onMoveGroup(itm.value, g, 1)}>
+                                    {g > 0 && <Button variant="orderable-toggler-toggler" onClick={() => onMoveGroup(itm.value, v, g, -1)}>
                                         <FontAwesomeIcon icon={faCaretLeft} />
                                     </Button>}
                                     <div className="orderable-toggler-item-content-2">
@@ -160,7 +162,7 @@ function OrderableToggler(props: OrderableTogglerProps) {
                                             return <b>{itm.title}</b>
                                         })()}
                                     </div>
-                                    {g < props.groups.length - 1 && <Button variant="orderable-toggler-toggler" onClick={() => onMoveGroup(itm.value, g, 1)}>
+                                    {g < props.groups.length - 1 && <Button variant="orderable-toggler-toggler" onClick={() => onMoveGroup(itm.value, v, g, 1)}>
                                         <FontAwesomeIcon icon={faCaretRight} />
                                     </Button>}
                                 </InputGroup>

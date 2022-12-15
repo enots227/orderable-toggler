@@ -19,7 +19,7 @@ root.render(
       { title: 'a', value: 'a' },
       { title: 'b', value: 'b' },
       { title: 'c', value: 'c' },
-      { title: 'd', value: 'a' },
+      { title: 'd', value: 'd' },
       { title: 'e', value: 'e' },
       { title: 'f', value: 'f' },
       { title: 'g', value: 'g' },
